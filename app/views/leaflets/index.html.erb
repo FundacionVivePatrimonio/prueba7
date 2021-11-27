@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Prospectos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @leaflets.each do |leaflet| %>
+        <td><b>Email:</b> <%= leaflet.email  %></td>
+        <td><b>Nombre:</b> <%= leaflet.name  %></td>
+        <td><b>Teléfono:</b> <%= leaflet.telephone  %></td>
+        <td><b>Estatus:</b> <%= leaflet.status  %></td>
+        <td><b>Ingresado por:</b> <%= leaflet.executive  %></td>
+        <td><b>Fecha de Ingreso:</b> <%= leaflet.date  %></td>
+        <td><b>Conversación:</b> <%= leaflet.conversation  %></td>
+        <td><%= link_to 'Mostrar', leaflet %></td>
+        <td><%= link_to 'Editar', edit_leaflet_path(leaflet) %></td>
+        <td><%= link_to 'Destruir', leaflet, method: :delete, data: { confirm: '¿Estás Seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Prospecto', new_leaflet_path %>

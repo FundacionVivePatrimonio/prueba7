@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<p> <b>Email:</b> <%= @leaflet.email%></p>
+<p> <b>Nombre:</b> <%= @leaflet.name%></p>
+<p> <b>Teléfono:</b> <%= @leaflet.telephone%></p>
+<% estado="" %>
+<% if @leaflet.status == true
+    estado = "Interesado"
+  else
+    estado = "Prospecto"
+  end
+%>
+<p> <b>Status de prospecto:</b> <%= estado %></p>
+<p> <b>Ingresado por:</b> <%= @leaflet.executive%></p>
+<p> <b>Fecha de Ingreso:</b>  <%= @leaflet.date%></p>
+<p> <b>Conversación:</b>  <%= @leaflet.conversation%></p>
+<p></p>
+<p></p>
+
+<%= link_to 'Editar', edit_leaflet_path(@leaflet) %> |
+<%= link_to 'Volver', leaflets_path %>
